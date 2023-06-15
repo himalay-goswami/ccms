@@ -1,10 +1,10 @@
-package dev.udd.himalay.ccmsbackend.entity.model;
+package dev.udd.himalay.ccmsbackend.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class UserEntity {
 
     @Id
     private int userId;

@@ -1,4 +1,4 @@
-package dev.udd.himalay.ccmsbackend.controller;
+package dev.udd.himalay.ccmsbackend.ui.controller;
 
 import dev.udd.himalay.ccmsbackend.entity.CaseEntity;
 import dev.udd.himalay.ccmsbackend.repository.CcmsRepository;
