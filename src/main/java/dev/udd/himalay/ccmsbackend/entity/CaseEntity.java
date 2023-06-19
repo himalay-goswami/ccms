@@ -8,44 +8,43 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name = "cases")
-@NoArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Setter
 public class CaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "case_id")
     private int caseId;
 
-    @Column(nullable = false)
+    @Column(name = "case_number")
     private Integer caseNumber;
 
-    @Column(nullable = false)
+    @Column(name = "year_of_case")
     private String yearOfCase;
 
-
-    @Column(nullable = false)
+    @Column(name = "applicants")
     private String applicants;
 
-    @Column(nullable = false)
+    @Column(name = "defendants")
     private String defendants;
 
-    @Column(nullable = false)
+    @Column(name = "is_closed")
     private boolean isClosed;
 
-    @Column(nullable = false)
+    @Column(name = "description")
     private String description;
 
-    @Column(nullable = false)
+    @Column(name = "iscafiled")
     private boolean isCAFiled;
 
-    @Column(nullable = false)
+    @Column(name = "final_decision_date")
     private String finalDecisionDate;
 
-    @Column(nullable = false)
+    @Column(name = "next_hearing_date")
     private String nextHearingDate;
 
-    @Column(nullable = false)
+    @Column(name = "resolution")
     private String resolution;
 }
