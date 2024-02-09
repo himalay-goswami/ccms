@@ -41,15 +41,15 @@ public class AddNewUserView extends Composite<VerticalLayout> {
         TextField textField2 = new TextField();
         EmailField emailField = new EmailField();
         TextField textField3 = new TextField();
-        ComboBox comboBox = new ComboBox();
+        ComboBox<SampleItem> comboBox = new ComboBox<>();
         DatePicker datePicker = new DatePicker();
         TextField textField4 = new TextField();
         TextField textField5 = new TextField();
         VerticalLayout layoutColumn3 = new VerticalLayout();
         H3 h32 = new H3();
         FormLayout formLayout3Col2 = new FormLayout();
-        ComboBox comboBox2 = new ComboBox();
-        ComboBox comboBox3 = new ComboBox();
+        ComboBox<SampleItem> comboBox2 = new ComboBox<>();
+        ComboBox<SampleItem> comboBox3 = new ComboBox<>();
         TextField textField6 = new TextField();
         CheckboxGroup checkboxGroup = new CheckboxGroup();
         HorizontalLayout layoutRow = new HorizontalLayout();
@@ -102,9 +102,9 @@ public class AddNewUserView extends Composite<VerticalLayout> {
         setComboBoxSampleData(comboBox3);
         textField6.setLabel("POST");
         textField6.setWidth("min-content");
-        checkboxGroup.setLabel("SELECT OPTIONS THAT APPLY");
+        checkboxGroup.setLabel("SELECT OPTIONS:");
         checkboxGroup.setWidth("min-content");
-        checkboxGroup.setItems("Order ID", "Product Name", "Customer", "Status");
+        checkboxGroup.setItems("Active on Duty", "Suspended", "Senior Citizen", "PWD");
         checkboxGroup.addThemeVariants(CheckboxGroupVariant.LUMO_VERTICAL);
         layoutRow.setWidthFull();
         getContent().setFlexGrow(1.0, layoutRow);
@@ -158,10 +158,10 @@ public class AddNewUserView extends Composite<VerticalLayout> {
 
     private void setComboBoxSampleData(ComboBox comboBox) {
         List<SampleItem> sampleItems = new ArrayList<>();
-        sampleItems.add(new SampleItem("first", "First", null));
-        sampleItems.add(new SampleItem("second", "Second", null));
-        sampleItems.add(new SampleItem("third", "Third", Boolean.TRUE));
-        sampleItems.add(new SampleItem("fourth", "Fourth", null));
+        sampleItems.add(new SampleItem("SBM", "SBM", null));
+        sampleItems.add(new SampleItem("PMAY", "PMAY", null));
+        sampleItems.add(new SampleItem("AMRUT", "AMRUT", Boolean.TRUE));
+        sampleItems.add(new SampleItem("DAY LULM", "DAY NULM", null));
         comboBox.setItems(sampleItems);
         comboBox.setItemLabelGenerator(item -> ((SampleItem) item).label());
     }

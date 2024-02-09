@@ -47,8 +47,8 @@ public class MainLayout extends AppLayout {
 
     private H2 viewTitle;
 
-    private AuthenticatedUser authenticatedUser;
-    private AccessAnnotationChecker accessChecker;
+    private final AuthenticatedUser authenticatedUser;
+    private final AccessAnnotationChecker accessChecker;
 
     public MainLayout(AuthenticatedUser authenticatedUser, AccessAnnotationChecker accessChecker) {
         this.authenticatedUser = authenticatedUser;
@@ -70,7 +70,7 @@ public class MainLayout extends AppLayout {
     }
 
     private void addDrawerContent() {
-        H1 appName = new H1("ccms uk");
+        H1 appName = new H1("CCMS");
         appName.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
         Header header = new Header(appName);
 
@@ -150,7 +150,6 @@ public class MainLayout extends AppLayout {
             nav.addItem(new SideNavItem("Reminder", ReminderView.class, LineAwesomeIcon.TH_SOLID.create()));
 
         }
-
         return nav;
     }
 

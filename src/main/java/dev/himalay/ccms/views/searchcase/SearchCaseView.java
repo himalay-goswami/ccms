@@ -21,6 +21,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
 import com.vaadin.flow.theme.lumo.LumoUtility.Gap;
 import com.vaadin.flow.theme.lumo.LumoUtility.Padding;
+import dev.himalay.ccms.data.SampleAddress;
 import dev.himalay.ccms.data.SamplePerson;
 import dev.himalay.ccms.services.SamplePersonService;
 import dev.himalay.ccms.views.MainLayout;
@@ -49,14 +50,14 @@ public class SearchCaseView extends Composite<VerticalLayout> {
         H5 h5 = new H5();
         HorizontalLayout layoutRow4 = new HorizontalLayout();
         HorizontalLayout layoutRow5 = new HorizontalLayout();
-        ComboBox comboBox = new ComboBox();
+        ComboBox<SampleItem> comboBox = new ComboBox<>();
         HorizontalLayout layoutRow6 = new HorizontalLayout();
         TextField textField3 = new TextField();
         TextField textField4 = new TextField();
         TextField textField5 = new TextField();
         TextField textField6 = new TextField();
         VerticalLayout layoutColumn3 = new VerticalLayout();
-        Grid multiSelectGrid = new Grid(SamplePerson.class);
+        Grid<SamplePerson> multiSelectGrid = new Grid<>(SamplePerson.class);
         getContent().addClassName(Gap.XSMALL);
         getContent().addClassName(Padding.SMALL);
         getContent().setWidth("100%");
@@ -158,7 +159,7 @@ public class SearchCaseView extends Composite<VerticalLayout> {
     record SampleItem(String value, String label, Boolean disabled) {
     }
 
-    private void setComboBoxSampleData(ComboBox comboBox) {
+    private void setComboBoxSampleData(ComboBox<SampleItem> comboBox) {
         List<SampleItem> sampleItems = new ArrayList<>();
         sampleItems.add(new SampleItem("first", "First", null));
         sampleItems.add(new SampleItem("second", "Second", null));
@@ -168,7 +169,7 @@ public class SearchCaseView extends Composite<VerticalLayout> {
         comboBox.setItemLabelGenerator(item -> ((SampleItem) item).label());
     }
 
-    private void setGridSampleData(Grid grid) {
+    private void setGridSampleData(Grid<SamplePerson> grid) {
         grid.setItems(query -> samplePersonService.list(
                 PageRequest.of(query.getPage(), query.getPageSize(), VaadinSpringDataHelpers.toSpringDataSort(query)))
                 .stream());

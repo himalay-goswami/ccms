@@ -158,8 +158,8 @@ public class CaseDetailsView extends Composite<VerticalLayout> {
         textItems.getStyle().set("flex-grow", "1");
         setMultiSelectListBoxSampleData(textItems);
         layoutRow5.setAlignSelf(FlexComponent.Alignment.CENTER, details);
-        details.setWidth("100%");
-        setDetailsSampleData(details);
+       // details.setWidth("100%");
+        //setDetailsSampleData(details);
         layoutRow6.setWidthFull();
         layoutColumn4.setFlexGrow(1.0, layoutRow6);
         layoutRow6.addClassName(Gap.MEDIUM);
@@ -205,9 +205,9 @@ public class CaseDetailsView extends Composite<VerticalLayout> {
     }
 
     private void setTabSheetSampleData(TabSheet tabSheet) {
-        tabSheet.add("Dashboard", new Div(new Text("This is the Dashboard tab content")));
-        tabSheet.add("Payment", new Div(new Text("This is the Payment tab content")));
-        tabSheet.add("Shipping", new Div(new Text("This is the Shipping tab content")));
+        tabSheet.add("Case Details", new Div(new Text("This is the case details tab content")));
+        tabSheet.add("Associated Parties", new Div(new Text("This is the associated parties tab content")));
+        tabSheet.add("Case Progress", new Div(new Text("This is the progress tab content")));
     }
 
     record SampleItem(String value, String label, Boolean disabled) {
